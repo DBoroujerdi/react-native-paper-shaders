@@ -4,7 +4,7 @@ import { StatusBar } from "expo-status-bar";
 
 import { GalleryListScreen } from "./src/screens/GalleryListScreen";
 import { ShaderDetailScreen } from "./src/screens/ShaderDetailScreen";
-import { SHADERS } from "./src/shaders/registry";
+import { SHADERS } from "react-native-paper-shaders";
 import type { RootStackParamList } from "./src/screens/navigation";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

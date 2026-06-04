@@ -2,7 +2,7 @@ import { createElement } from "react";
 import { StyleSheet, Text, useWindowDimensions, View } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { SHADERS } from "../shaders/registry";
+import { SHADERS } from "react-native-paper-shaders";
 import type { RootStackParamList } from "./navigation";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Detail">;

@@ -1,0 +1,28 @@
+{
+  "name": "react-native-paper-shaders",
+  "version": "0.1.0",
+  "description": "Paper Design's shaders ported to React Native via @shopify/react-native-skia (SkSL runtime effects)",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "files": ["src"],
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@shopify/react-native-skia": "*",
+    "react": "*",
+    "react-native": "*",
+    "react-native-reanimated": "*",
+    "react-native-worklets": "*"
+  },
+  "devDependencies": {
+    "@shopify/react-native-skia": "2.6.2",
+    "@types/react": "~19.2.2",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "react-native-reanimated": "4.3.1",
+    "react-native-worklets": "^0.8.3",
+    "typescript": "~6.0.3"
+  }
+}

@@ -1,0 +1,5 @@
+# Hoist workspace deps into the root node_modules (classic layout).
+# Native RN modules (skia, reanimated, worklets) must exist as a single copy,
+# and Expo's Metro auto-config resolves through the workspace-root node_modules.
+[install]
+linker = "hoisted"
