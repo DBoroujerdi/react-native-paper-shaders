@@ -37,7 +37,8 @@ No pre-existing public port of Paper's shaders to React Native was found at the 
 
 ## Architecture decisions
 
-- **Bun-workspaces monorepo**: the shaders live in `packages/shaders` (the `react-native-paper-shaders` library, source-only — Metro compiles the TS directly); the gallery app lives in `apps/gallery` and imports the library.
+- **Bun-workspaces monorepo**: the shaders live in `packages/shaders` (the `react-native-paper-shaders` library, source-only — Metro compiles the TS directly); the gallery app lives in `apps/gallery` and imports the library; `apps/playground` is a Vite SPA that converts Paper snippets to their RN form (see its README).
+- **The playground renders the real components on the web** by aliasing `react-native`, `react-native-reanimated` and `@shopify/react-native-skia` to shims (`apps/playground/src/preview/shims/`) that hand each component's SkSL and uniforms to CanvasKit. Nothing about a shader is duplicated there, so it doubles as a browser-side compile check for all 29 SkSL sources.
 - **One `.sksl.ts` + one `.tsx` per shader** under `packages/shaders/src/shaders/`, registered in `packages/shaders/src/shaders/registry.ts` (exported from the library) which drives the gallery (`apps/gallery/src/screens/`).
 - **Prop API mirrors Paper exactly** (names, defaults from Paper's `defaultPreset`), so exported snippets translate mechanically. Only `style` differs: callers must use RN conventions (numeric sizes, `borderWidth`/`borderColor` instead of CSS strings/`outline`) — a deliberate decision over shipping a CSS-string adapter.
 - **Time driving**: Reanimated `useFrameCallback` advances a `SharedValue` on the UI thread by `delta × speed`, seeded from the `frame` prop (milliseconds, matching Paper's convention; `u_time` is seconds = frame×0.001). No per-frame React re-renders.

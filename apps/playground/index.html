@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paper → React Native shader playground</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Babel's parser/generator read process.env; the browser has no process. -->
+    <script>
+      window.process = window.process || { env: {}, platform: "browser" };
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

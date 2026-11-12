@@ -75,6 +75,20 @@ Building your own shader in the same style? The internals are exported:
 - **No derivative-based anti-aliasing** (SkSL runtime effects lack `fwidth`) — slightly harder edges.
 - Fully-procedural shaders (Dithering, Warp, Voronoi, Spiral, …) are essentially pixel-exact vs Paper.
 
+## Paper → RN playground
+
+`apps/playground` is a static site that does the snippet conversion for you:
+paste a Paper export, get the RN version (or a self-contained single-file
+component), previewed live in the browser by CanvasKit — the same Skia that
+RN-Skia wraps natively.
+
+```sh
+bun run playground         # dev server
+bun run playground:build   # static bundle in apps/playground/dist
+```
+
+See `apps/playground/README.md` for the conversion rules it applies.
+
 ## Credit
 
 All shader algorithms are ported from [`@paper-design/shaders`](https://github.com/paper-design/shaders) (MIT) by the Paper Design team. This package is an unaffiliated React Native port. MIT licensed.

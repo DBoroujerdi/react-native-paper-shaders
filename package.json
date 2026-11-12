@@ -8,6 +8,8 @@
     "ios": "bun --filter gallery ios",
     "android": "bun --filter gallery android",
     "web": "bun --filter gallery web",
+    "playground": "bun --filter playground dev",
+    "playground:build": "bun --filter playground build",
     "typecheck": "bun --filter '*' typecheck"
   },
   "trustedDependencies": [
